@@ -1,13 +1,12 @@
 # PDF-Reader
 
-## Brief
 A project for [PrayerMate](https://www.prayermate.net/).
 
-Using [PDF-Reader-Turtletext](https://github.com/tardate/pdf-reader-turtletext) to convert Open Doors' [monthly PDF Prayer Calendar](examplePDF.pdf) to [simple text](example_text.txt).
+Converting prayer letter PDFs to text *in the right order*.
 
-## Conclusion
-At least, I tried to use PDF-Reader-Turtletext to get the x-coordinates for where each column begins, so that the text can be extracted column by column. Getting the x-coordinates seems to work, but extracting the text doesn't -- mostly all you seem to get are rows of question marks. 
+I tried using PDF-Reader-Turtletext, and then just PDF-Reader.
 
-PDF-Reader on its own however seems to be able to extract the text fine. (Is this because ...Turtletext is dependent on an obsolete version of PDF-Reader? v.1.1.1).
+But I have now discovered [Docsplit](https://documentcloud.github.io/docsplit/), which is able to read PDFs with surprising intelligence, perfectly clustering all the columns of text (on the two PDFs tried so far).
 
-Anyway, instead of using coordinates, I've just cut the page into columns by slicing each line at 65-character intervals. That seems to work, though perhaps it could be tidied up a little.
+Leaving us with nothing to do but to find the turning point of the file and output a final rendition that starts at the beginning of the prayer month and ends at the end.
+
