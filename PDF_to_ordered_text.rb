@@ -20,7 +20,7 @@ def page_to_text(file)
 
 end
 
-def order_pdf(file)
+def order_pdf(file, columns, start_point)
     reader = PDF::Reader.new(File.join("pdfs",file))
 
     # write each page to a file
@@ -62,7 +62,7 @@ def order_pdf(file)
     }
 end
 
-# order_pdf("1.pdf")
-page_to_text("2.pdf")
+order_pdf("1.pdf", 3, [2,1])
+# order_pdf("2.pdf", 4, [1,3])
 
 
